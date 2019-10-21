@@ -27,7 +27,8 @@ class TodoGroup extends React.Component{
 
         let todoss = [];
         todoss.push(this.state.todo);
-        todoss.push(this.state.inputValue + "\n");
+        
+        todoss.push(this.state.inputValue);
         this.setState({todo: todoss})
     }
 
@@ -40,7 +41,19 @@ class TodoGroup extends React.Component{
            <button onClick={this.addTask}>Add Task!</button>
            </div>
            <div>
-           {this.state.todo}
+           <div>
+        {this.state.todo.map((item) => {
+          return (
+              <div>
+                <div>
+                <input type = "checkbox"></input>
+                 <p>{item}</p>
+               </div>
+                </div>
+          )
+        })}
+      </div>
+           {/* {this.state.todo} */}
            </div>
        </div>
        );
