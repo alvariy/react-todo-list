@@ -14,11 +14,7 @@ class App extends React.Component{
 
    addTask = () => {    
 
-        let todoss = [];
-        todoss.push(this.state.todo);
-
-        todoss.push(<Listss inputMessage = {this.state.inputValue}/>);
-        this.setState({todo: todoss})
+        this.setState({todo: [...this.state.todo,<Listss inputMessage = {this.state.inputValue}/>]})
    }
 
    handleChange = (event) => {
