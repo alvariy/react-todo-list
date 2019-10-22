@@ -29,7 +29,10 @@ class App extends React.Component{
   render()
   {  return (
     <div className="App">
-      <header className="App-header">
+      <header>
+      </header>
+      <body>
+      <div><h2> To Do Exercise! </h2></div>
       <div>
            <input type="text" value = {this.state.inputValue} onChange={this.handleChange}/>
            <button onClick={this.addTask}>Add Task!</button>
@@ -40,8 +43,7 @@ class App extends React.Component{
            {this.state.todo}
            </ol>
            </div>
-
-      </header>
+      </body>
     </div>
   );}
 }
