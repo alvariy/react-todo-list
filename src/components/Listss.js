@@ -4,13 +4,18 @@ class Listss extends React.Component{
     constructor(props){
     super(props);
     this.state = {
-        todoMessage : ""
+        todoMessage : "",
+        isChecked : false
     }
     }
 
+    handleChange = (event) => {
+        this.setState({isChecked: !this.state.isChecked});
+       };
+
     render(){
         return(          
-            <li><input type="checkbox"></input>{this.props.inputMessage}</li>
+            <li className = {this.state.isChecked ? "checked" : ""}> <input type="checkbox" onChange = {this.handleChange} ></input>{this.props.inputMessage}</li>
        );
     }
 }
